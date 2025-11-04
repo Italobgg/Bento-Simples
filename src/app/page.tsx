@@ -1,9 +1,9 @@
-import { BentoCard } from '@/src/components/BentoCard'
-import { BentoGrid } from '@/src/components/BentoGrid'
-import { Header } from '@/src/components/Header'
+import { BentoCard } from "@/src/components/BentoCard";
+import { BentoGrid } from "@/src/components/BentoGrid";
+import { Header } from "@/src/components/Header";
 
-import { FaGithub, FaLinkedin } from 'react-icons/fa'
-import { HiArrowRight } from 'react-icons/hi' // Ícone de seta
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiArrowRight } from "react-icons/hi";
 
 export default function Home() {
   return (
@@ -13,12 +13,13 @@ export default function Home() {
       <BentoGrid>
         <BentoCard className="md:col-span-2">
           <h3 className="mb-2 text-xl font-bold">💻 Projetos</h3>
-          <p className="mb-4 text-brand-gray">
+          <p className="mb-4 text-light-gray dark:text-brand-gray">
             Meus principais trabalhos e estudos recentes.
           </p>
           <a
             href="#"
-            className="flex items-center gap-2 text-brand-green transition-colors hover:text-brand-light"
+            className="flex items-center gap-2 text-brand-green transition-colors 
+                       hover:text-light-text dark:hover:text-brand-light"
           >
             Ver todos <HiArrowRight />
           </a>
@@ -26,7 +27,7 @@ export default function Home() {
 
         <BentoCard>
           <h3 className="mb-2 text-xl font-bold">🧠 Sobre Mim</h3>
-          <p className="text-brand-gray">
+          <p className="text-light-gray dark:text-brand-gray">
             Apaixonado por criar interfaces fluidas e acessíveis.
           </p>
         </BentoCard>
@@ -35,19 +36,21 @@ export default function Home() {
           <h3 className="mb-2 text-xl font-bold">🌐 Redes</h3>
           <div className="flex justify-around gap-4 py-4">
             <a
-              href="https://github.com/Italobgg"
+              href="https://github.com/seu-usuario"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-gray transition-transform hover:text-brand-green hover:scale-110"
+              className="text-light-gray transition-transform hover:text-brand-green 
+                         hover:scale-110 dark:text-brand-gray dark:hover:text-brand-green"
               aria-label="GitHub"
             >
               <FaGithub size={40} />
             </a>
             <a
-              href="https://www.linkedin.com/in/italobgg/"
+              href="https://linkedin.com/in/seu-usuario"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-brand-gray transition-transform hover:text-brand-green hover:scale-110"
+              className="text-light-gray transition-transform hover:text-brand-green 
+                         hover:scale-110 dark:text-brand-gray dark:hover:text-brand-green"
               aria-label="LinkedIn"
             >
               <FaLinkedin size={40} />
@@ -57,18 +60,19 @@ export default function Home() {
 
         <BentoCard className="md:col-span-2">
           <h3 className="mb-2 text-xl font-bold">📄 Currículo</h3>
-          <p className="mb-4 text-brand-gray">
+          <p className="mb-4 text-light-gray dark:text-brand-gray">
             Veja minha trajetória profissional e habilidades detalhadas.
           </p>
           <a
             href="/curriculo-italo.pdf"
             target="_blank"
-            className="flex items-center gap-2 text-brand-green transition-colors hover:text-brand-light"
+            className="flex items-center gap-2 text-brand-green transition-colors 
+                       hover:text-light-text dark:hover:text-brand-light"
           >
             Baixar PDF <HiArrowRight />
           </a>
         </BentoCard>
       </BentoGrid>
     </main>
-  )
+  );
 }

@@ -1,33 +1,40 @@
-// app/layout.tsx
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google' // Importa a fonte
-import './globals.css'
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import "./globals.css";
+import { ThemeProvider } from "@/src/providers/ThemeProvider";
 
-// Configura a fonte com os pesos que vamos usar
 const inter = Inter({
-  subsets: ['latin'],
-  weight: ['400', '700'],
-})
+  subsets: ["latin"],
+  weight: ["400", "700"],
+});
 
 export const metadata: Metadata = {
-  title: 'Ítalo Garcia | Desenvolvedor Front-End',
-  description: 'Construindo experiências com código e design.',
-}
+  title: "Ítalo Garcia | Desenvolvedor Front-End",
+  description: "Construindo experiências com código e design.",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
-    // Começamos com 'dark' como padrão no HTML
-    <html lang="pt-br" className="dark">
+    <html lang="pt-br" suppressHydrationWarning>
       <body
         className={`${inter.className} 
-        bg-dark-bg bg-dark-gradient text-brand-light antialiased`}
+          bg-light-bg text-light-text 
+          dark:bg-dark-bg dark:bg-dark-gradient dark:text-brand-light 
+          antialiased transition-colors duration-300
+        `}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="dark"
+          enableSystem={false}
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
-  )
+  );
 }

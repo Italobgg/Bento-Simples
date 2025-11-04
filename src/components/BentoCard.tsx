@@ -1,6 +1,7 @@
 "use client";
+
 import { ReactNode } from "react";
-import { motion } from "framer-motion"; // 1. Importar o motion
+import { motion } from "framer-motion";
 
 interface BentoCardProps {
   children: ReactNode;
@@ -16,7 +17,10 @@ export const BentoCard = ({ children, className }: BentoCardProps) => {
   return (
     <motion.div
       className={`
-        bg-dark-card p-6 rounded-2xl shadow-lg 
+        bg-light-card text-light-text p-6 rounded-2xl shadow-lg
+        
+        dark:bg-dark-card dark:text-brand-light dark:shadow-xl
+        
         ${className} 
       `}
       variants={cardVariants}
