@@ -17,10 +17,11 @@ export const BentoCard = ({ children, className }: BentoCardProps) => {
   return (
     <motion.div
       className={`
-        bg-light-card text-light-text p-6 rounded-2xl shadow-lg
-        
-        dark:bg-dark-card dark:text-brand-light dark:shadow-xl
-        
+        p-6 rounded-2xl shadow-lg
+        dark:shadow-xl
+        text-light-text 
+        dark:text-brand-light
+
         ${className} 
       `}
       variants={cardVariants}
